@@ -1,0 +1,143 @@
+"Setup {{{
+set nocompatible
+set t_Co=256
+
+" map leader key to comma
+let mapleader = ","
+
+"Pathogen settings
+execute pathogen#infect()
+
+"slate, darkZ, default, desert, elflord, koehler, molokai
+" dobre:
+" tomorow-night, Monokai, candyman, mustang
+" colorscheme candyman
+" colorscheme dobar
+colorscheme desert
+
+set number	 "Show line numbers
+set linebreak	 "Break lines at word (requires Wrap lines)
+"set showbreak=+++ "	# Wrap-broken line prefix
+set textwidth=1000 "	# Line wrap (number of cols)
+set showmatch	" Highlight matching brace
+syntax on
+ 
+set hlsearch	 "Highlight all search results
+set ignorecase	 "Always case-insensitive
+set smartcase	 "Enable smart-case search
+set incsearch	 "Searches for strings incrementally
+ 
+set autoindent	 "Auto-indent new lines
+set expandtab	 "Use spaces instead of tabs
+set shiftwidth=4	" Number of auto-indent spaces
+set smartindent	 "Enable smart-indent
+set smarttab	 "Enable smart-tabs
+set softtabstop=4	" Number of spaces per Tab
+set foldmethod=marker "Fold at marker
+ 
+"Advanced
+
+set undolevels=1000	"Number of undo levels
+set backspace=indent,eol,start	 "Backspace behaviour
+
+"Indentation
+vnoremap < <gv 
+vnoremap > >gv
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+source ~/.vim/mappings.vim
+" }}}
+
+"Mapping {{{ 
+"arrow keys
+"Move line down
+no <down> ddp 
+no <left> <Nop>
+"Move line up
+no <up> ddkP 
+no <right> <Nop>
+
+" Markdown map
+nmap <leader>m :InstantMarkdownPreview<return>
+
+"Parentheses and quotes
+"imap ( ()<Esc>i
+"imap [ []<Esc>i
+"imap { {}<Esc>i
+" }}}
+
+"Python-mode {{{
+" Activate rope
+" keys:
+" K             Show python docs
+" <Ctrl-Space>  Rope autocomplete
+" <Ctrl-c>g     Rope goto definition
+" <Ctrl-c>d     Rope show documentation
+" <Ctrl-c>f     Rope find occurrences
+" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 1
+let g:pymode_rope_completion = 1
+
+" Documentation
+"let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+let g:pymode_trim_whitespaces = 1
+let g:pymode_options_max_line_length = 150
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_on_fly = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_ignore = "E501"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_bind = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
+" }}}
+
+" Powerline {{{
+" let g:Powerline_symbols = 'fancy'
+set laststatus=2
+set termencoding=utf-8
+let g:Powerline_colorscheme = 'solarized256'
+let g:Powerline_dividers_override = ['', '', '', '|']
+" }}}
+
+" Indentline {{{
+let g:indentLine_color_term = 239
+let g:indentLine_enabled = 1
+let g:indentLine_fileTypeExclude = ['text']
+let g:indentLine_leadingSpaceChar = '˰'
+let g:indentLine_leadingSpaceEnabled = 1
+" }}}
+
+" vim-instant-markdown {{{
+" call with ':InstantMarkdownPreview'
+let g:instant_markdown_autostart = 0
+" }}}
+
+" Auto Pairs {{{
+let g:AutoPairsFlyMode=1
+" }}}

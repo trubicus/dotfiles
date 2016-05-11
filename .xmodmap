@@ -1,0 +1,7 @@
+!Remap Caps_Lock as Escape
+remove Lock = Caps_Lock
+keysym Caps_Lock = Escape
+
+!Natural scroll - setup in ~/.i3/config
+!pointer = 1 2 3 5 4 6 7 8 9 10 11 12
+!pointer = 3 2 1 5 4 7 6 8 9 10 11 12
