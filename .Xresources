@@ -46,3 +46,12 @@ URxvt.resize-font.smaller: C-minus
 URxvt.resize-font.bigger: C-plus
 URxvt.resize-font.reset: C-equal
 URxvt.resize-font.show: C-question
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: #272727, #393939, #268bd2
+rofi.color-normal: #272727, #ffffff, #393939, #268bd2, #ffffff
+rofi.color-active: #272727, #268bd2, #393939, #268bd2, #205171
+rofi.color-urgent: #272727, #f3843d, #393939, #268bd2, #ffc39c

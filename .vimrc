@@ -1,12 +1,16 @@
 "Setup {{{
 set nocompatible
+filetype off
+"Pathogen settings
+execute pathogen#infect()
+
+filetype plugin indent on
+
 set t_Co=256
+syntax on
 
 " map leader key to comma
 let mapleader = ","
-
-"Pathogen settings
-execute pathogen#infect()
 
 "slate, darkZ, default, desert, elflord, koehler, molokai
 " dobre:
@@ -20,7 +24,6 @@ set linebreak	 "Break lines at word (requires Wrap lines)
 "set showbreak=+++ "	# Wrap-broken line prefix
 set textwidth=1000 "	# Line wrap (number of cols)
 set showmatch	" Highlight matching brace
-syntax on
  
 set hlsearch	 "Highlight all search results
 set ignorecase	 "Always case-insensitive
@@ -34,6 +37,7 @@ set smartindent	 "Enable smart-indent
 set smarttab	 "Enable smart-tabs
 set softtabstop=4	" Number of spaces per Tab
 set foldmethod=marker "Fold at marker
+set visualbell  "turn off that anoyng bell
  
 "Advanced
 
@@ -129,7 +133,7 @@ let g:Powerline_dividers_override = ['', '', '', '|']
 let g:indentLine_color_term = 239
 let g:indentLine_enabled = 1
 let g:indentLine_fileTypeExclude = ['text']
-let g:indentLine_leadingSpaceChar = '˰'
+let g:indentLine_leadingSpaceChar = '.'
 let g:indentLine_leadingSpaceEnabled = 1
 " }}}
 

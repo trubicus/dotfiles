@@ -32,15 +32,23 @@ bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+Shift+q kill
 
+set $bg_color            #272727
+set $text_color          #f9f9f9
+set $inactive_bg_color   #272727
+set $inactive_text_color #999999
+set $urgent_bg_color     #e53935
+set $indicator           #6f8cbe
+
+
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 50 -padding 80 -bc "$bg_color" -bg "$bg_color" -opacity "95" -fg "$text_color" -font "System San Francisco 20"
+bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 50 -padding 80 -opacity "95" -font "System San Francisco 20"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym $mod+Delete exec --no-startup-id "i3lock -i ~/Pictures/Wallpapers/wallpaper.png"
+bindsym $mod+Delete exec --no-startup-id "i3lock -t -i ~/Pictures/Wallpapers/ghost-rider.png"
 #bindsym $mod+Delete exec --no-startup-id "i3lock --textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c  -i ~/Pictures/Wallpapers/wallpaper.png"
 
 
@@ -72,7 +80,8 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+b split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+space split toggle
+
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -86,7 +95,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -163,12 +172,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg_color            #272727
-set $text_color          #f9f9f9
-set $inactive_bg_color   #272727
-set $inactive_text_color #999999
-set $urgent_bg_color     #e53935
-set $indicator           #6f8cbe
 
 # Window colors
 #                           Border              Background          Text                  Indicator
@@ -193,9 +196,9 @@ bar {
 }
 
 # Natural scrolling
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Scrolling Distance" -114, -114
+# exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Scrolling Distance" -114, -114
 # Horisontal scrolling
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Two-Finger Scrolling" 1, 1
+# exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "Synaptics Two-Finger Scrolling" 1, 1
 
 
 #Pulse Audio controls
@@ -204,8 +207,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -Ap 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -Up 10 # decrease screen brightness
 
 # Touchpad controls
 # bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
@@ -221,10 +224,12 @@ exec_always --no-startup-id feh --bg-center ~/Pictures/Wallpapers/ghost-rider.jp
 
 # Open in a perticular workspace
 # Find class by using xprop command
-assign [instance="^google-chrome$"] $workspace1
+assign [instance="^chromium$"] $workspace1
 assign [class="Rhythmbox"] $workspace10
 # Sunrise calendar
 assign [instance="^crx_mojepfklcankkmikonjlnidiooanmpbb$"] $workspace4
+# Google Calendar
+assign [instance="^crx_ejjicmeblgpmajnghnpcppodonldlgfn$"] $workspace4
 # Messenger
 assign [instance="^crx_gbnmeldbokbekmoggklkmhhfcagmbibi$"] $workspace8
 # Todoist
@@ -232,8 +237,8 @@ assign [instance="^crx_bgjohebimpjdhhocbknplfelpmdhifhd$"] $workspace4
 # Spotify
 assign [class="Spotify"] $workspace10
 
-exec_always --no-startup-id fluxgui
-exec_always --no-startup-id dropbox
+exec_always --no-startup-id redshift -O 4000K
+exec_always --no-startup-id dropbox start
 
 # Remove titlebars
 new_window 1pixel
@@ -242,5 +247,5 @@ new_window 1pixel
 exec_always compton -f -D 5 --inactive-dim 0.2
 
 # Start some services
-exec --no-startup-id /usr/bin/gnome-settings-daemon
+# exec --no-startup-id /usr/bin/gnome-settings-daemon
 exec --no-startup-id nm-applet
