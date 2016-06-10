@@ -121,12 +121,11 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 let g:pymode_folding = 0
 " }}}
 
-" Powerline {{{
-" let g:Powerline_symbols = 'fancy'
-set laststatus=2
-set termencoding=utf-8
-let g:Powerline_colorscheme = 'solarized256'
-let g:Powerline_dividers_override = ['', '', '', '|']
+" Airline {{{
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_powerline_fonts=0
+let g:airline_theme='base16_default'
 " }}}
 
 " Indentline {{{

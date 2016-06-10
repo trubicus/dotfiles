@@ -5,8 +5,8 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# cypher kafeitu theurnraveler funky cloud clean
-ZSH_THEME="kafeitu"
+# cypher kafeitu theurnraveler funky cloud clean gitster
+ZSH_THEME="gitster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ ZSH_CUSTOM=/home/truba/.config/zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git cp)
+plugins=(cp python)
 
 # User configuration
 
