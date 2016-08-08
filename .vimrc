@@ -144,3 +144,10 @@ let g:instant_markdown_autostart = 0
 " Auto Pairs {{{
 let g:AutoPairsFlyMode=1
 " }}}
+
+"vim-markdown{{{
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal = 0
+set foldenable
+
+"}}}

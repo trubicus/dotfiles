@@ -225,7 +225,6 @@ exec_always --no-startup-id feh --bg-center ~/Pictures/Wallpapers/ghost-rider.jp
 # Open in a perticular workspace
 # Find class by using xprop command
 assign [instance="^chromium$"] $workspace1
-assign [class="Rhythmbox"] $workspace10
 # Sunrise calendar
 assign [instance="^crx_mojepfklcankkmikonjlnidiooanmpbb$"] $workspace4
 # Google Calendar
