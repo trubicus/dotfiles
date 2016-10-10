@@ -10,7 +10,7 @@ set t_Co=256
 syntax on
 
 " map leader key to comma
-let mapleader = ","
+let mapleader = " "
 
 "slate, darkZ, default, desert, elflord, koehler, molokai
 " dobre:
@@ -53,7 +53,7 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
-source ~/.vim/mappings.vim
+"source ~/.vim/mappings.vim
 " }}}
 
 "Mapping {{{ 
@@ -66,12 +66,25 @@ no <up> ddkP
 no <right> <Nop>
 
 " Markdown map
-nmap <leader>m :InstantMarkdownPreview<return>
+nmap <leader>m :InstantMarkdownPreview<cr>
 
-"Parentheses and quotes
-"imap ( ()<Esc>i
-"imap [ []<Esc>i
-"imap { {}<Esc>i
+"open file tree with leader n
+map <silent> <leader>n :NERDTreeToggle<cr>
+
+" Move between splits w/ C-hjkl
+nmap <silent> <c-h> <c-w>h
+nmap <silent> <c-j> <c-w>j
+nmap <silent> <c-k> <c-w>k
+nmap <silent> <c-l> <c-w>l
+
+" Open and close tabs
+map <silent> <leader>tn :tabe<CR>
+map <silent> <leader>tw :tabclose<CR>
+
+" Split view horizontally and vertically
+map <silent> <leader>vs :vsplit<cr>
+map <silent> <leader>hs :split<cr>
+
 " }}}
 
 "Python-mode {{{

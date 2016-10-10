@@ -234,7 +234,7 @@ assign [instance="^crx_gbnmeldbokbekmoggklkmhhfcagmbibi$"] $workspace8
 # Todoist
 assign [instance="^crx_bgjohebimpjdhhocbknplfelpmdhifhd$"] $workspace4
 # Spotify
-assign [class="Spotify"] $workspace10
+assign [class="spotify"] $workspace10
 
 exec_always --no-startup-id redshift -O 4000K
 exec_always --no-startup-id dropbox start

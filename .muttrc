@@ -25,6 +25,9 @@ folder-hook 'account.com.gmail.itrubic.truba' 'source ~/.mutt/account.com.gmail.
  #------------------------------------------------------
  set imap_check_subscribed
  # set hostname = gmail.com
+ set header_cache=~/.mutt/cache/headers/
+ set message_cachedir=~/.mutt/cache/bodies/
+ set mbox_type=Maildir
  set mail_check = 120
  set timeout = 300
  set imap_keepalive = 300
@@ -34,6 +37,9 @@ folder-hook 'account.com.gmail.itrubic.truba' 'source ~/.mutt/account.com.gmail.
  set sort = 'threads'
  set sort_aux = 'reverse-last-date-received'
  set auto_tag = yes
+ #set record = '/home/truba/.muttrc/mail/mail'
+ #set mbox='~/.mutt/mail/'
+ #set folder='/home/truba/.mutt/mail/'
  ignore "Authentication-Results:"
  ignore "DomainKey-Signature:"
  ignore "DKIM-Signature:"
@@ -47,8 +53,8 @@ folder-hook 'account.com.gmail.itrubic.truba' 'source ~/.mutt/account.com.gmail.
  #-------- Color Theme {{{
  #------------------------------------------------------
 
- color hdrdefault cyan default
- #color hdrdefault black default
+ #color hdrdefault cyan default
+ color hdrdefault black default
  color attachment yellow default
 
  color header brightyellow default "From: "
