@@ -17,7 +17,7 @@ let mapleader = " "
 " tomorow-night, Monokai, candyman, mustang
 " colorscheme candyman
 " colorscheme dobar
-colorscheme desert
+" colorscheme desert
 
 set number	 "Show line numbers
 set linebreak	 "Break lines at word (requires Wrap lines)
@@ -108,10 +108,10 @@ let g:pymode_rope_completion = 1
 let g:pymode_doc_key = 'K'
 
 let g:pymode_trim_whitespaces = 1
-let g:pymode_options_max_line_length = 150
+let g:pymode_options_max_line_length = 80
 "Linting
 let g:pymode_lint = 1
-let g:pymode_lint_on_fly = 1
+let g:pymode_lint_on_fly = 0
 let g:pymode_lint_checker = "pyflakes,pep8"
 let g:pymode_lint_ignore = "E501"
 " Auto check on save
@@ -132,6 +132,10 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
 let g:pymode_folding = 0
+
+" Completion
+let g:pymode_rope_completion = 1
+let g:pymode_rope_complete_on_dot = 1
 " }}}
 
 " Airline {{{

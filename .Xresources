@@ -1,5 +1,6 @@
 URxvt.scrollBar: false
 URxvt.font: xft:Monaco:size=12
+xterm*faceName: Monaco:size=12:antialias=false
 
 ! special
 *.foreground:   #e0e0e0
