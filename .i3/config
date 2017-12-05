@@ -50,7 +50,7 @@ bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 50 -padding 80 -opacity
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym $mod+Delete exec --no-startup-id "i3lock -t -i ~/Pictures/Wallpapers/ghost-rider.png"
+bindsym $mod+Delete exec --no-startup-id "i3lock -t -i ~/Pictures/Wallpapers/astronaut.png"
 #bindsym $mod+Delete exec --no-startup-id "i3lock --textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c  -i ~/Pictures/Wallpapers/wallpaper.png"
 
 
@@ -205,9 +205,9 @@ bar {
 
 
 #Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -Ap 10 # increase screen brightness
@@ -226,7 +226,7 @@ bindsym $mod+n exec $scripts/external_monitor.sh # switch outputs
 # bindsym XF86AudioPrev exec playerctl previous
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-center ~/Pictures/Wallpapers/ghost-rider.jpeg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/astronaut.png
 
 # Open in a perticular workspace
 # Find class by using xprop command
@@ -238,9 +238,9 @@ assign [instance="^crx_gbnmeldbokbekmoggklkmhhfcagmbibi$"] $workspace8
 # Todoist
 assign [instance="^crx_bgjohebimpjdhhocbknplfelpmdhifhd$"] $workspace4
 # Spotify
-assign [class="^spotify$"] $workspace10
+assign [class="^Spotify$"] $workspace10
 # Franz
-assign [class="^franz$"] $workspace8
+assign [class="^Franz$"] $workspace8
 
 exec_always --no-startup-id redshift -O 4000K
 exec_always --no-startup-id dropbox start
