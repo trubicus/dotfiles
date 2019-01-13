@@ -32,12 +32,18 @@ bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+Shift+q kill
 
-set $bg_color            #272727
-set $text_color          #f9f9f9
-set $inactive_bg_color   #272727
-set $inactive_text_color #999999
-set $urgent_bg_color     #e53935
-set $indicator           #6f8cbe
+# set $bg_color            #272727
+set_from_resource $bg_color i3wm.color0 #272727
+# set $text_color          #f9f9f9
+set_from_resource $text_color i3wm.color16 #f9f9f9
+# set $inactive_bg_color   #272727
+set_from_resource $inactive_bg_color i3wm.color6 #272727
+# set $inactive_text_color #999999
+set_from_resource $inactive_text_color i3wm.color8 #999999
+# set $urgent_bg_color     #e53935
+set_from_resource $urgent_bg_color i3wm.color2 #6f8cbe
+# set $indicator           #6f8cbe
+set_from_resource $indicator i3wm.color4 #6f8cbe
 
 set $scripts ~/.i3/scripts
 
@@ -50,7 +56,8 @@ bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 50 -padding 80 -opacity
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym $mod+Delete exec --no-startup-id "i3lock -t -i ~/Pictures/Wallpapers/astronaut.png"
+bindsym $mod+Delete exec --no-startup-id "betterlockscreen -l"
+#bindsym $mod+Delete exec --no-startup-id "i3lock -t -i ~/Pictures/Wallpapers/lockscreen.png"
 #bindsym $mod+Delete exec --no-startup-id "i3lock --textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c  -i ~/Pictures/Wallpapers/wallpaper.png"
 
 
@@ -178,8 +185,8 @@ bindsym $mod+r mode "resize"
 # Window colors
 #                           Border              Background          Text                  Indicator
 client.focused             $bg_color           $bg_color           $text_color           $indicator
-client.unfocused           $inactive_bg_color  $inactive_bg_color  $inactive_text_color  $indicator
-client.focused_inactive    $inactive_bg_color  $inactive_bg_color  $inactive_text_color  $indicator
+client.unfocused           $bg_color           $bg_color           $text_color           $indicator
+client.focused_inactive    $bg_color           $bg_color           $text_color           $indicator
 client.urgent              $urgent_bg_color    $urgent_bg_color    $text_color           $indicator
 
 
@@ -187,13 +194,15 @@ client.urgent              $urgent_bg_color    $urgent_bg_color    $text_color  
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        tray_output primary
         status_command i3blocks -c ~/.i3/i3blocks.conf
         colors{
             background $bg_color
 #           segment              Border              Background          Text
             focused_workspace   $bg_color           $bg_color           $text_color
-            inactive_workspace  $inactive_bg_color  $inactive_bg_color  $inactive_text_color
-            urgent_workspace    $urgent_bg_color    $urgent_bg_color    $text_color
+            inactive_workspace  $bg_color           $bg_color           $inactive_text_color
+            urgent_workspace    $bg_color           $bg_color           $urgent_bg_color
+            active_workspace    $bg_color           $bg_color           $inactive_text_color
         }
         strip_workspace_numbers yes
 }
@@ -226,7 +235,8 @@ bindsym $mod+n exec $scripts/external_monitor.sh # switch outputs
 # bindsym XF86AudioPrev exec playerctl previous
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/astronaut.png
+# exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/astronaut.png
+exec_always --no-startup-id wal -i ~/Pictures/Wallpapers/retrowave/neon6.png
 
 # Open in a perticular workspace
 # Find class by using xprop command
@@ -235,6 +245,7 @@ assign [instance="^chromium$"] $workspace1
 assign [instance="^crx_ejjicmeblgpmajnghnpcppodonldlgfn$"] $workspace4
 # Messenger
 assign [instance="^crx_gbnmeldbokbekmoggklkmhhfcagmbibi$"] $workspace8
+assign [name="^Messenger$"] $workspace8
 # Todoist
 assign [instance="^crx_bgjohebimpjdhhocbknplfelpmdhifhd$"] $workspace4
 # Spotify
@@ -242,8 +253,8 @@ assign [class="^Spotify$"] $workspace10
 # Franz
 assign [class="^Franz$"] $workspace8
 
-exec_always --no-startup-id redshift -O 4000K
-exec_always --no-startup-id dropbox start
+exec_always --no-startup-id redshift -P -O 4000K
+# exec_always --no-startup-id dropbox start
 
 # Remove titlebars
 new_window 1pixel
@@ -254,3 +265,7 @@ exec_always compton -f -D 5 --inactive-dim 0.2
 # Start some services
 # exec --no-startup-id /usr/bin/gnome-settings-daemon
 exec --no-startup-id nm-applet
+
+# i3-gnome stuff
+exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
+exec_always --no-startup-id gnome-power-manager

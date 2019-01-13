@@ -1,6 +1,6 @@
 "Setup {{{
 set nocompatible
-filetype off
+filetype on
 "Pathogen settings
 execute pathogen#infect()
 
@@ -38,6 +38,8 @@ set smarttab	 "Enable smart-tabs
 set softtabstop=4	" Number of spaces per Tab
 set foldmethod=marker "Fold at marker
 set visualbell  "turn off that anoyng bell
+set fileencoding=utf8  "set file encodig to utf8
+set bomb "utf files begin with byte order mark
  
 "Advanced
 
@@ -143,6 +145,7 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_powerline_fonts=0
 let g:airline_theme='base16_default'
+set laststatus=2
 " }}}
 
 " Indentline {{{
@@ -159,7 +162,7 @@ let g:instant_markdown_autostart = 0
 " }}}
 
 " Auto Pairs {{{
-let g:AutoPairsFlyMode=1
+let g:AutoPairsFlyMode=0
 " }}}
 
 "vim-markdown{{{
@@ -167,4 +170,11 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_conceal = 0
 set foldenable
 
+"}}}
+
+" Rubocop {{{
+let g:syntastic_check_on_open = 1
+" Use rubocop w/ syntastic
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_rubocop_args = "-D"
 "}}}

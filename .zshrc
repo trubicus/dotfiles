@@ -56,6 +56,7 @@ plugins=(cp python)
 # User configuration
 
   export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+  export PATH="$PATH:/home/truba/.gem/ruby/2.5.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -89,3 +90,4 @@ alias ls="ls --color=auto"
 alias fs="du -h -d 1 | sort -hr"
 alias projekt_json="curl -X PUT http://homie.config/config --header 'Content-Type: application/json' -d @config.json"
 # ncdu dost dobra stvar
+alias smloadr -p ~/Music/
