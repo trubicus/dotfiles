@@ -37,7 +37,8 @@ set smartindent	 "Enable smart-indent
 set smarttab	 "Enable smart-tabs
 set softtabstop=4	" Number of spaces per Tab
 set foldmethod=marker "Fold at marker
-set visualbell  "turn off that anoyng bell
+"set visualbell  "Flash screen instead of bell
+set belloff=all  "This actualy disables the bell
 set fileencoding=utf8  "set file encodig to utf8
 set bomb "utf files begin with byte order mark
  
@@ -178,3 +179,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_ruby_rubocop_args = "-D"
 "}}}
+"
+" Numbers {{{
+nnoremap <leader># :NumbersToggle<CR>
+" }}}

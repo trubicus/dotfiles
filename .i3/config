@@ -245,7 +245,7 @@ assign [instance="^chromium$"] $workspace1
 assign [instance="^crx_ejjicmeblgpmajnghnpcppodonldlgfn$"] $workspace4
 # Messenger
 assign [instance="^crx_gbnmeldbokbekmoggklkmhhfcagmbibi$"] $workspace8
-assign [name="^Messenger$"] $workspace8
+assign [class="^Messenger$"] $workspace8
 # Todoist
 assign [instance="^crx_bgjohebimpjdhhocbknplfelpmdhifhd$"] $workspace4
 # Spotify
