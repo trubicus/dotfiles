@@ -85,9 +85,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias notes="vim ~/Dropbox/Notes"
+# alias notes="vim ~/Dropbox/Notes"
 alias ls="ls --color=auto"
 alias fs="du -h -d 1 | sort -hr"
 alias projekt_json="curl -X PUT http://homie.config/config --header 'Content-Type: application/json' -d @config.json"
 # ncdu dost dobra stvar
-alias smloadr -p ~/Music/
+#alias smloadr="smloadr -p ~/Music/"
+alias clipboard="xclip -selection clipboard"

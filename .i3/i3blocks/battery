@@ -23,7 +23,8 @@ my $full_text;
 my $short_text;
 
 # read the first line of the "acpi" command output
-open (ACPI, 'acpi -b |') or die "Can't exec acpi: $!\n";
+#open (ACPI, 'acpi -b | grep "Battery 1" |') or die "Can't exec acpi: $!\n";
+open (ACPI, 'acpi -b | tail -n 1 |') or die "Can't exec acpi: $!\n";
 $acpi = <ACPI>;
 close(ACPI);
 

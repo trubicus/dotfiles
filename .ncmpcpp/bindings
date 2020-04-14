@@ -164,11 +164,11 @@ def_key "j"
 #def_key "}"
 #  scroll_down_artist
 #
-def_key "ctrl_u"
-  page_up
+#def_key "ctrl_u"
+#  page_up
 #
-def_key "ctrl_d"
-  page_down
+#def_key "ctrl_d"
+#  page_down
 #
 #def_key "home"
 #  move_home

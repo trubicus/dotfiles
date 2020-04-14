@@ -9,9 +9,9 @@
 #
 mpd_host = "localhost"
 #
-mpd_port = "6601"
+mpd_port = "6661"
 #
-mpd_music_dir = "/mnt/763A649C3A645B5F/Users/truba/Music"
+mpd_music_dir = "~/Music"
 #
 mpd_connection_timeout = "5"
 #
@@ -237,7 +237,7 @@ user_interface = "classic" (classic/alternative)
 #
 default_find_mode = "wrapped" (wrapped/normal)
 #
-default_space_mode = "add" (add/select)
+#default_space_mode = "add" (add/select)
 #
 #default_tag_editor_left_col = "albums" (albums/dirs)
 #
